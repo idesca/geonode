@@ -10,11 +10,11 @@ services:
       - '.:/usr/src/app'
     environment:
       - DEBUG=False
-      - GEONODE_LB_HOST_IP=localhost
+      - GEONODE_LB_HOST_IP=idesca.munisc.gob.cr
       - GEONODE_LB_PORT=80
-      - SITEURL=http://localhost/
-      - ALLOWED_HOSTS=['localhost', ]
-      - GEOSERVER_PUBLIC_LOCATION=http://localhost/geoserver/
+      - SITEURL=http://idesca.munisc.gob.cr/
+      - ALLOWED_HOSTS=['*','localhost','idesca.munisc.gob.cr', ]
+      - GEOSERVER_PUBLIC_LOCATION=http://idesca.munisc.gob.cr/geoserver/
 
   celery:
     build: .
@@ -22,14 +22,14 @@ services:
       - '.:/usr/src/app'
     environment:
       - DEBUG=False
-      - GEONODE_LB_HOST_IP=localhost
+      - GEONODE_LB_HOST_IP=idesca.munisc.gob.cr
       - GEONODE_LB_PORT=80
-      - SITEURL=http://localhost/
-      - ALLOWED_HOSTS=['localhost', ]
-      - GEOSERVER_PUBLIC_LOCATION=http://localhost/geoserver/
+      - SITEURL=http://idesca.munisc.gob.cr/
+      - ALLOWED_HOSTS=['*','localhost','idesca.munisc.gob.cr', ]
+      - GEOSERVER_PUBLIC_LOCATION=http://idesca.munisc.gob.cr/geoserver/
 
   geoserver:
     environment:
-      - GEONODE_LB_HOST_IP=localhost
+      - GEONODE_LB_HOST_IP=idesca.munisc.gob.cr
       - GEONODE_LB_PORT=80
   #    - NGINX_BASE_URL=
